@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./styles/main.css">
+  <title>Everything In Your Nutshell</title>
+</head>
+
+<body id="body">
+
+  <img src="./images/fallSky.jpeg" class="background" alt="Fall Sky Image">
+
+  <header id='headerContainer'>
+    <section id="banner">
+      <h1 id='bannerText'>Nutshell</h1>
+      <a href="https://github.com/nss-day-cohort-38/nutshell-keen-kit-kats" target="_blank"><img
+          src="./images/nutshell-logo.png" alt="Nutshell"></a>
+    </section>
+    <nav class="hidden" id="resourceButtons">
+      <button type="button" id="myNews">News</button>
+      <button type="button" id="myEvents">Events</button>
+      <button type="button" id="myTasks">Tasks</button>
+      <button type="button" id="myAll">See All</button>
+    </nav>
+    <img id="profileIcon" class="hidden" src="./images/profileIcon2.png" alt="">
+    <div class="hidden" id="profileDropDown">
+      <button type="button" id="myProfile">My Profile</button>
+      <button type="button" id="myFriends">My Friends</button>
+      <button id="chatButton" class="">Open Chat</button>
+      <button type="button" id="logout">Logout</button>
+    </div>
+  </header>
+
+
+  <div id="chatContainer" class="hidden">
+    <button id="chatButtonClose">Exit</button>
+    <section>
+      <h1 id="chatHeader">Chat Room</h1>
+    </section>
+
+    <div id="message-list">
+    </div>
+
+    <div class="chat-room-field">
+      <input type="hidden" id="hiddenMessageId" value=""/>
+      <label for="writeMessage">Write Message!</label>
+      <input type="text" name="writeMessage" id="writeMessage" autofocus>
+      <button id="sendMessage">Send</button>
+    </div>
+
+  </div>
+  <div id="mainContainer">
+
+  </div>
+
+ <footer id="footerContainer">
+   <a target="_blank" href="https://github.com/alyssanycum"><img class="githubImageLinks"
+   src="https://avatars1.githubusercontent.com/u/59579703?s=400&v=4"
+   height="50" width="50" alt="Alyssa
+   Nycum's Github Avatar as a link"></a>
+   <a target="_blank" href="https://github.com/HalcyonVagabond"><img class="githubImageLinks"
+   src="https://avatars0.githubusercontent.com/u/49670648?s=400&v=4" height="50" width="50" alt="Jeremy
+   Mattingly's Github Avatar as a link"></a>
+   <a target="_blank" href="https://github.com/MurdockDM"><img class="githubImageLinks"
+   src="https://avatars2.githubusercontent.com/u/22229547?s=460&v=4" height="50" width="50" alt="Dustin
+   Murdock's Github Avatar as a link"></a>
+   <a target="_blank" href="https://github.com/MattCrook"><img class="githubImageLinks"
+   src="https://avatars2.githubusercontent.com/u/55410893?s=460&v=4" height="50" width="50" alt="Matt
+   Crook's GitHub Avatar as a link"></a>
+ </footer>
+
+  <script type="module" src="./scripts/main.js"></script>
+</body>
+
+</html>

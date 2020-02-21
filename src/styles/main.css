@@ -1,0 +1,611 @@
+:root {
+  --background-color: rgb(255, 255, 240);
+  --mindaro: rgba(223, 239, 202, 1);
+  --lightSage: rgba(204, 221, 211, 1);
+  --mediumSage: rgb(145, 176, 159);
+  --darkSage: rgb(135, 164, 148);
+  --hansaYellow: rgba(255, 249, 165, 1);
+  --earthYellow: rgba(229, 178, 93, 1);
+  --brownSugar: rgb(167, 133, 104);
+  --darkLiver: rgba(82, 58, 52, 1);
+  --red: rgb(195, 69, 69);
+  --wine: rgb(185, 39, 39);
+  --plum: rgb(136, 112, 145);
+  --sunset: rgb(235, 150, 26);
+  --deepBlue: rgb(60, 111, 138);
+}
+
+.hidden {
+  display: none !important;
+  transition: 1s ease;
+}
+
+.background {
+  height: 100% !important;
+  width: 100% !important;
+  position: fixed !important;
+  z-index: -3;
+  top: 0;
+  left: 0;
+}
+
+button {
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+
+/* ******************************************************** */
+/*              Begin Header Styling                        */
+/* ******************************************************** */
+
+header {
+  background-color: var(--deepBlue);
+  border-top: 15px solid var(--darkLiver);
+  border-bottom: 2px solid var(--darkLiver);
+  height: 70px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+header section h1 {
+  margin-top: 21px;
+  margin-left: 25px;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: #ffffff;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  position: fixed;
+}
+
+header section img {
+  width: 26px;
+  position: fixed;
+  margin-left: 158px;
+  margin-top: 24px;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: fixed;
+  width: 60%;
+  right: 0;
+  margin-top: 22px;
+  margin-right: 60px;
+}
+
+@media (max-width: 500px) {
+  nav {
+    display: none;
+  }
+}
+
+nav button {
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
+  color: rgb(51, 38, 35);
+  background-color: var(--deepBlue);
+  box-shadow: none;
+  padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+nav button:hover {
+  color: var(--mindaro);
+  background-color: var(--darkSage);
+  transition: 0.5s ease;
+}
+
+#profileIcon {
+  width: 26px;
+  transition: 0.5s ease;
+  position: fixed;
+  right: 0;
+  margin-top: 23px;
+  margin-right: 44px;
+}
+#profileIcon:hover {
+  cursor: pointer;
+  transition: 0.5s ease;
+  background-color: var(--mindaro);
+  padding: 7px;
+  border-radius: 50px;
+  margin-top: 16px;
+  margin-right: 37px;
+}
+
+#profileDropDown {
+  background-color: var(--mediumSage);
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px 3px var(--darkLiver);
+  height: 150px;
+  width: 160px;
+  position: fixed;
+  right: 0;
+  margin-top: 59px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#profileDropDown button {
+  padding: 9px;
+  border: none;
+  background-color: var(--mediumSage);
+  color: white;
+  font-weight: bold;
+}
+
+#profileDropDown button:hover {
+  background-color: var(--deepBlue);
+  box-shadow: 1px 1px 1px var(--darkLiver);
+  transition: 0.5s ease;
+}
+
+#logout:hover {
+  color: white;
+  background-color: var(--red) !important;
+  transition: 0.5s ease;
+}
+
+/* ******************************************************** */
+/*                   Begin Body Styling                     */
+/* ******************************************************** */
+
+/*             mainContainer styling                        */
+
+#mainContainer {
+  margin-top: 115px;
+  text-align: center;
+  margin-bottom: 15%;
+}
+
+/* Login Styling */
+.tabs{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.tabs .active{
+  background-color: var(--wine);
+  color: white;
+  border: 1px solid black;
+  padding: 10px;
+}
+.tabs .inactive{
+  background-color: gainsboro;
+  border:1px solid black;
+  padding: 10px;
+}
+.tabs .active:hover {
+  cursor: pointer;
+}
+.tabs .inactive:hover{
+  cursor: pointer;
+}
+.tabs-content {
+  background-color: var(--mediumSage);
+  box-shadow: 3px 3px var(--darkLiver);
+  border-radius: 10px;
+  padding: 20px;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.signup-form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-evenly; */
+  /* align-content: center; */
+  /* align-items: ; */
+  width: 250px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/*            Styling for welcome messages                  */
+
+.welcomeContainer {
+  width: 50%;
+  max-width: 450px;
+  min-width: 250px;
+  border-radius: 30px;
+  box-shadow: 5px 5px var(--darkLiver);
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px;
+  text-align: center;
+  background-color: var(--mediumSage);
+}
+
+@media (max-width: 550px) {
+  .welcomeContainer {
+    display: fixed;
+    margin-top: 120px !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .welcomeContainer {
+    display: fixed;
+    margin-top: 180px;
+  }
+}
+
+.welcomeContainer h1 {
+  color: var(--darkLiver);
+  background-color: rgb(247, 255, 237);
+  border-radius: 6px;
+  box-shadow: 2px 2px var(--darkLiver);
+  width: 70%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.welcomeContainer p {
+  color: var(--darkLiver);
+  background-color: var(--mindaro);
+  box-shadow: 2px 2px var(--darkLiver);
+  border-radius: 6px;
+  width: 50%;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-wrap {
+  margin-top: 150px;
+  width: 75%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* ********* Message Board Styling************** */
+
+#chatHeader {
+  margin-top: 15px;
+  margin-left: 15px;
+  font-family: Georgia, serif;
+  font-size: 25px;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  color: black;
+  font-weight: 700;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: italic;
+  font-variant: small-caps;
+  text-transform: capitalize;
+  position: fixed;
+  border-bottom: solid black;
+}
+
+#chatContainer {
+  border: 4px ridge var(--darkLiver);
+  box-shadow: 2px 2px 2px 2px gray;
+  border-radius: 5px;
+  padding: 8px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 65%;
+  margin-top: 100px;
+  background-color: aliceblue;
+  overflow: hidden;
+  z-index: -1;
+}
+.chatUsername:hover {
+  transition: 0.1s ease;
+  color: purple;
+  border-bottom: 2px solid purple;
+  cursor: pointer;
+}
+
+.shrink {
+  width: 65% !important;
+}
+
+#writeMessage {
+  width: 250px;
+}
+
+#message-list {
+  position: sticky;
+  top: 70px;
+  height: 70%;
+  overflow: scroll;
+}
+@media (max-height: 625px) {
+  #message-list {
+    height: 60%;
+  }
+}
+
+.chat-room-field {
+  background-color: white;
+  padding: 8px;
+  position: absolute;
+  bottom: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.chat-room-landing-page {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+#chatButtonClose {
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  width: 50px;
+  height: 30px;
+
+  background: #8a2387;
+  background: linear-gradient(to right, #f27121, #e94057, #8a2387);
+  position: relative;
+  text-align: center;
+  padding: 5px 0 0;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
+}
+
+.message-edit-button {
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
+  height: 50%;
+}
+
+#sendMessage {
+  cursor: pointer;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  width: 50px;
+  height: 30px;
+
+  background: #8a2387;
+  background: linear-gradient(to right, #f27121, #e94057, #8a2387);
+  padding: 5px 0 0;
+  font-weight: 200;
+  border: 2px solid black;
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
+}
+
+/* Styling Forms */
+
+.createFormContainer {
+  color: antiquewhite;
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  background-color: var(--deepBlue);
+  box-shadow: 2px 2px 2px 2px var(--darkLiver);
+  border-radius: 5px;
+  overflow: auto;
+}
+
+.createFormContainer fieldset {
+  border: none;
+}
+
+.sectionHeader {
+  background-color: var(--darkSage);
+  color: antiquewhite;
+  border-radius: 15px;
+  box-shadow: 3px 3px 3px var(--darkLiver);
+  padding: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* *********** Styling Cards! **************** */
+
+.objCards {
+  width: 90%;
+  margin-top: 2%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+
+.objCards img {
+  width: 40px;
+}
+.friendCard {
+  background-color: var(--hansaYellow);
+}
+.friendCard h1 {
+  color: white;
+  background-color: var(--deepBlue);
+  padding: 5px;
+  border-radius: 6px;
+}
+
+.cards {
+  color: var(--darkLiver);
+  width: 200px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px var(--darkLiver);
+}
+
+.noCards {
+  width: 50%;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: var(--lightSage);
+}
+
+/* extra event card styling */
+
+.firstCard {
+  background-color: var(--earthYellow);
+  width: 400px;
+  border: 3px solid black;
+  box-shadow: 2px 2px 5px 2px black;
+  text-shadow: 1px 1px 1px beige;
+}
+
+.otherCards {
+  background-color: var(--hansaYellow);
+}
+
+.friendCard {
+  background-color: cornsilk;
+  font-style: italic;
+}
+
+.friendCardName {
+  color: white;
+  background-color: var(--deepBlue);
+  box-shadow: 3px 3px var(--darkLiver);
+  padding: 12px;
+  border-radius: 5px;
+}
+
+.newsCards__styles {
+  background-color: var(--sunset);
+}
+
+.newsTitle {
+    border-radius: 3px;
+    background-color: var(--plum);
+    padding: 4px;
+    box-shadow: 1px 1px black;
+}
+
+.newsTitle a {
+    color: white;
+}
+
+/*   extra task card styling  */
+
+.incomplete {
+  background-color: rgb(255, 107, 107);
+}
+
+.complete {
+  background-color: var(--mediumSage);
+}
+
+.undoButton {
+  color: black;
+  border: none;
+  border-bottom: 1px solid black;
+  background-color: var(--mediumSage);
+}
+
+.undoButton:hover {
+  color: purple;
+  border-bottom: 1px dotted purple;
+  background-color: none;
+  transition: 0.1s ease;
+}
+
+.taskName h2:hover {
+  border-bottom: 2px solid white;
+}
+
+/* ******* Begin My Profile Styling ********** */
+
+#myProfileContainer {
+  width: 60%;
+  height: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 18%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: rgb(239, 168, 79);
+  box-shadow: 5px 5px 5px 5px var(--darkLiver);
+  border-radius: 5px;
+  z-index: 1;
+}
+
+#myProfileContainer img {
+  width: 30%;
+  box-shadow: 3px 3px 3px 3px var(--hansaYellow);
+  border-radius: 100%;
+}
+
+#myProfileContainer div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  height: 60px;
+  background-color: var(--hansaYellow);
+  padding: 8px;
+  box-shadow: 2px 2px 2px var(--darkLiver);
+}
+
+/* #myProfileContainer p {
+    background-color: var(--hansaYellow);
+    padding: 8px;
+    box-shadow: 1px var(--darkLiver);
+} */
+
+/* ******************************************************** */
+/*                Begin Footer Styling                      */
+/* ******************************************************** */
+#footerContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: var(--deepBlue);
+  border-top: 2px solid var(--darkLiver);
+  border-bottom: 2px solid var(--darkLiver);
+  height: 55px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  padding-top: 1%;
+}
+
+.githubImageLinks {
+  border: ridge 2px white;
+}
+
