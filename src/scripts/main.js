@@ -11,6 +11,7 @@ import init from "./messages/addMessagesToDOM.js"
 import messageAPIManager from "./messages/messagesManager.js"
 import { editMessagesButtonAction } from "./messages/editMessageEvent.js"
 
+
 // Calling initial render of messages
 init()
 messageAPIManager.postSendMessage()

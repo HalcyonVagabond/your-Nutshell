@@ -1,19 +1,28 @@
-const baseUrl = "http://localhost:8088";
+// https://nutshell-db.herokuapp.com/
+
+const baseUrl = () => {
+  if(window.location.href.includes('com')){
+    return 'https://nutshell-db.herokuapp.com'
+  } else {
+    return "http://localhost:8088";
+  }
+}
+
 
 const dbAPI = {
   getUsers() {
-    return fetch(`${baseUrl}/users`).then(resp => resp.json());
+    return fetch(`${baseUrl()}/users`).then(resp => resp.json());
   },
   getFriends(currentUserId) {
-    return fetch(`${baseUrl}/friends?loggedInUserId=${currentUserId}&_expand=user`).then(resp => resp.json());
+    return fetch(`${baseUrl()}/friends?loggedInUserId=${currentUserId}&_expand=user`).then(resp => resp.json());
   },
   getObjectByResource(resource, userId) {
     return fetch(
-      `${baseUrl}/${resource}/?userId=${userId}&_expand=user`
+      `${baseUrl()}/${resource}/?userId=${userId}&_expand=user`
     ).then(resp => resp.json());
   },
   postObjectByResource(resource, resourceObject) {
-    return fetch(`${baseUrl}/${resource}`, {
+    return fetch(`${baseUrl()}/${resource}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,12 +31,12 @@ const dbAPI = {
     }).then(resp => resp.json());
   },
   deleteObjectByResource(resource, id) {
-    return fetch(`${baseUrl}/${resource}/${id}`, {
+    return fetch(`${baseUrl()}/${resource}/${id}`, {
       method: "DELETE"
     });
   },
   putObjectByResource(resource, resourceObject) {
-    return fetch(`${baseUrl}/${resource}/${resourceObject.id}`, {
+    return fetch(`${baseUrl()}/${resource}/${resourceObject.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
@@ -36,7 +45,7 @@ const dbAPI = {
     }).then(resp => resp.json());
   },
   patchObjectByResource(resource, id, keyValueObj) {
-    return fetch(`${baseUrl}/${resource}/${id}`, {
+    return fetch(`${baseUrl()}/${resource}/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
@@ -45,13 +54,13 @@ const dbAPI = {
     }).then(resp => resp.json());
   },
   getMessagesExpanded() {
-    return fetch(`${baseUrl}/messages?_expand=user`).then(resp => resp.json());
+    return fetch(`${baseUrl()}/messages?_expand=user`).then(resp => resp.json());
   },
   fetchObjectById(resource, id) {
-    return fetch(`${baseUrl}/${resource}/${id}`).then(resp => resp.json());
+    return fetch(`${baseUrl()}/${resource}/${id}`).then(resp => resp.json());
   },
   async editResource (resource, resourceObject) {
-    const resp = await fetch(`${baseUrl}/${resource}/${resourceObject.id}`, {
+    const resp = await fetch(`${baseUrl()}/${resource}/${resourceObject.id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json"
